@@ -21,6 +21,7 @@ public class STBlocks {
             itemCapacity = 8000;
             unitCapModifier = 12;
             unitType = STUnitTypes.hypha;
+            alwaysUnlocked = true;
             isFirstTier = true;
 
             requirements(Category.effect, ItemStack.with(
