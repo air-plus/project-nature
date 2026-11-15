@@ -1,8 +1,12 @@
 package somethings.content;
 
 import mindustry.type.Planet;
+import mindustry.type.Weather;
+import mindustry.content.Weathers;
 import mindustry.maps.generators.BlankPlanetGenerator;
-import mindustry.graphics.g3d.*;
+import mindustry.graphics.g3d.SunMesh;
+import mindustry.graphics.g3d.NoiseMesh;
+import mindustry.graphics.g3d.HexSkyMesh;
 import arc.graphics.Color;
 import mindustry.game.Team;
 
@@ -41,6 +45,9 @@ public class STPlanets {
             ruleSetter = r -> {
                 r.defaultTeam = Team.crux;
                 r.waveTeam = Team.green;
+                r.weather.add(new Weather.WeatherEntry(Weathers.rain) {{
+                    always = true;
+                }});
             };
         }};
     }

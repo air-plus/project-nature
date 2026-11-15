@@ -1,18 +1,39 @@
 package somethings.content;
 
+import mindustry.world.Block;
+import mindustry.world.blocks.storage.CoreBlock;
 import mindustry.world.blocks.production.GenericCrafter;
-import mindustry.type.*;
-import mindustry.content.*;
-import mindustry.world.draw.*;
+import mindustry.type.ItemStack;
+import mindustry.type.Category;
+import mindustry.content.Items;
+import mindustry.content.Liquids;
+import mindustry.world.draw.DrawMulti;
+import mindustry.world.draw.DrawDefault;
+import mindustry.world.draw.DrawArcSmelt;
 
 public class STBlocks {
-    public static GenericCrafter zAlloyMixer;
+    public static Block coreMoss, zAlloyMixer;
 
     public static void load() {
+        coreMoss = new CoreBlock("core-moss") {{
+            health = 12000;
+            size = 2;
+            itemCapacity = 8000;
+            unitCapModifier = 12;
+            unitType = STUnitTypes.hypha;
+            isFirstTier = true;
+
+            requirements(Category.effect, ItemStack.with(
+                Items.copper, 2000,
+                Items.lead, 1000
+            ));
+        }};
+
         zAlloyMixer = new GenericCrafter("z-alloy-mixer") {{
             health = 8000;
             size = 3;
             craftTime = 120f;
+
             requirements(Category.crafting, ItemStack.with(
                 Items.copper, 4000,
                 Items.lead, 4000,
@@ -25,6 +46,7 @@ public class STBlocks {
             ));
             consumeLiquid(Liquids.slag, 2f);
             consumePower(1.8f);
+
             outputItem = new ItemStack(STItems.zAlloy, 2);
             drawer = new DrawMulti(
                 new DrawDefault(),
