@@ -1,8 +1,7 @@
 package somethings.content;
 
 import mindustry.type.UnitType;
-import mindustry.entities.units.LegsUnit;
-import mindustry.entities.EntityMapping;
+import mindustry.gen.LegsUnit;
 
 public class STUnitTypes {
     public static UnitType hypha;
@@ -10,7 +9,6 @@ public class STUnitTypes {
     public static void load() {
         hypha = new UnitType("hypha") {{
             constructor = LegsUnit::create;
-            EntityMapping.nameMap.put(name, constructor);
 
             isEnemy = false;
             health = 150f;
@@ -19,6 +17,8 @@ public class STUnitTypes {
             accel = 0.1f;
             drag = 0.05f;
             rotateSpeed = 15f;
+            legCount = 4;
+            legLength = 12f;
         }};
     }
 }
