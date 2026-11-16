@@ -11,10 +11,10 @@ import arc.graphics.Color;
 import mindustry.game.Team;
 
 public class STPlanets {
-    public static Planet psiStar, alpha;
+    public static Planet solStar, terra, luna;
 
     public static void load() {
-        psiStar = new Planet("psi", null, 2.5f) {{
+        solStar = new Planet("sol", null, 2.5f) {{
             accessible = false;
 
             meshLoader = () -> new SunMesh(
@@ -25,7 +25,7 @@ public class STPlanets {
             );
         }};
 
-        alpha = new Planet("alpha", psiStar, 1f, 2) {{
+        terra = new Planet("terra", solStar, 1f, 3) {{
             alwaysUnlocked = true;
             iconColor = Color.valueOf("697723");
             startSector = 1;
@@ -44,11 +44,24 @@ public class STPlanets {
             );
             ruleSetter = r -> {
                 r.defaultTeam = Team.crux;
-                r.waveTeam = Team.green;
+                r.waveTeam = Team.sharded;
                 r.weather.add(new Weather.WeatherEntry(Weathers.rain) {{
                     always = true;
                 }});
             };
+        }};
+
+        luna = new Planet("luna", terra, 0.2f, 2) {{
+            alwaysUnlocked = true;
+            iconColor = Color.valueOf("c0c0c0");
+
+            generator = new BlankPlanetGenerator();
+            meshLoader = () -> new NoiseMesh(
+                this, 1, 5, 0.2f, 4, 0.6f, 0.5f, 0.3f,
+                Color.valueOf("c0c0c0"),
+                Color.valueOf("6e6e6e"),
+                2, 0.6f, 0.5f, 0.5f
+            );
         }};
     }
 }

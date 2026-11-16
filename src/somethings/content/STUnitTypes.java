@@ -19,6 +19,9 @@ public class STUnitTypes {
             rotateSpeed = 15f;
             legCount = 4;
             legLength = 12f;
+            mineTier = 1;
+            mineSpeed = 2f;
+            itemCapacity = 20;
         }};
     }
 }

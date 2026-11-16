@@ -5,7 +5,6 @@ import somethings.content.STItems;
 import somethings.content.STUnitTypes;
 import somethings.content.STBlocks;
 import somethings.content.STPlanets;
-import somethings.content.STSectorPresets;
 import somethings.content.STTechTree;
 
 public class SomethingsMod extends Mod {
@@ -15,7 +14,6 @@ public class SomethingsMod extends Mod {
         STUnitTypes.load();
         STBlocks.load();
         STPlanets.load();
-        STSectorPresets.load();
         STTechTree.load();
     }
 }

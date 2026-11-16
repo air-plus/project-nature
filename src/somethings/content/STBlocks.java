@@ -12,12 +12,12 @@ import mindustry.world.draw.DrawDefault;
 import mindustry.world.draw.DrawArcSmelt;
 
 public class STBlocks {
-    public static Block coreMoss, zAlloyMixer;
+    public static Block coreShardTe, zAlloyMixer;
 
     public static void load() {
-        coreMoss = new CoreBlock("core-moss") {{
+        coreShardTe = new CoreBlock("core-shard-te") {{
             health = 12000;
-            size = 2;
+            size = 3;
             itemCapacity = 8000;
             unitCapModifier = 12;
             unitType = STUnitTypes.hypha;
