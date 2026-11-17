@@ -12,10 +12,10 @@ import mindustry.world.draw.DrawDefault;
 import mindustry.world.draw.DrawArcSmelt;
 
 public class STBlocks {
-    public static Block coreShardTe, zAlloyMixer;
+    public static Block coreArmored, zAlloyMixer;
 
     public static void load() {
-        coreShardTe = new CoreBlock("core-shard-te") {{
+        coreArmored = new CoreBlock("core-armored") {{
             health = 12000;
             size = 3;
             itemCapacity = 8000;

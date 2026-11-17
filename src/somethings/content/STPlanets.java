@@ -43,8 +43,6 @@ public class STPlanets {
                 4, 0.5f, 1.2f, 0.4f
             );
             ruleSetter = r -> {
-                r.defaultTeam = Team.crux;
-                r.waveTeam = Team.sharded;
                 r.weather.add(new Weather.WeatherEntry(Weathers.rain) {{
                     always = true;
                 }});

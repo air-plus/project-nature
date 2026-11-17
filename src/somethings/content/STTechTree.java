@@ -9,7 +9,7 @@ import static mindustry.content.TechTree.nodeProduce;
 
 public class STTechTree {
     public static void load() {
-        STPlanets.terra.techTree = nodeRoot("terra", STBlocks.coreShardTe, () -> {
+        STPlanets.terra.techTree = nodeRoot("terra", STBlocks.coreArmored, () -> {
             node(STBlocks.zAlloyMixer, ItemStack.with(
                 Items.silicon, 1000,
                 Items.surgeAlloy, 500
