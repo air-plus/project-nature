@@ -49,7 +49,7 @@ public class STPlanets {
                     Color.valueOf("ffffff").a(0.8f),
                     4, 0.5f, 1.2f, 0.4f
                 );
-            )
+            );
             ruleSetter = r -> {
                 r.weather.add(new Weather.WeatherEntry(Weathers.rain) {{
                     always = true;
