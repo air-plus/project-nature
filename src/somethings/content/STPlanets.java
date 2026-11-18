@@ -42,13 +42,12 @@ public class STPlanets {
                     this, 114514, 1f, 0.1f, 5,
                     Color.valueOf("e0e0e0").a(0.5f),
                     4, 0.5f, 1.2f, 0.4f
-                );
-
+                ),
                 new HexSkyMesh(
                     this, 1919810, 1f, 0.15f, 5,
                     Color.valueOf("ffffff").a(0.8f),
                     4, 0.5f, 1.2f, 0.4f
-                );
+                )
             );
             ruleSetter = r -> {
                 r.weather.add(new Weather.WeatherEntry(Weathers.rain) {{
