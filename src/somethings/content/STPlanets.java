@@ -6,6 +6,7 @@ import mindustry.content.Weathers;
 import mindustry.maps.generators.BlankPlanetGenerator;
 import mindustry.graphics.g3d.SunMesh;
 import mindustry.graphics.g3d.NoiseMesh;
+import mindustry.graphics.g3d.MultiMesh;
 import mindustry.graphics.g3d.HexSkyMesh;
 import arc.graphics.Color;
 import mindustry.game.Team;
@@ -28,20 +29,27 @@ public class STPlanets {
         terra = new Planet("terra", solStar, 1f, 3) {{
             alwaysUnlocked = true;
             iconColor = Color.valueOf("697723");
-            startSector = 1;
 
             generator = new BlankPlanetGenerator();
             meshLoader = () -> new NoiseMesh(
-                this, 1, 5, 1f, 3, 0.5f, 1f, 1f,
+                this, 114514, 5, 1f, 3, 0.5f, 1f, 1f,
                 Color.valueOf("697723"),
                 Color.valueOf("00477d"),
                 1, 0.5f, 1f, 0.5f
             );
-            cloudMeshLoader = () -> new HexSkyMesh(
-                this, 2, 1f, 0.15f, 5,
-                Color.valueOf("ffffff").a(0.8f),
-                4, 0.5f, 1.2f, 0.4f
-            );
+            cloudMeshLoader = () -> new MultiMesh(
+                new HexSkyMesh(
+                    this, 114514, 1f, 0.1f, 5,
+                    Color.valueOf("e0e0e0").a(0.5f),
+                    4, 0.5f, 1.2f, 0.4f
+                );
+
+                new HexSkyMesh(
+                    this, 1919810, 1f, 0.15f, 5,
+                    Color.valueOf("ffffff").a(0.8f),
+                    4, 0.5f, 1.2f, 0.4f
+                );
+            )
             ruleSetter = r -> {
                 r.weather.add(new Weather.WeatherEntry(Weathers.rain) {{
                     always = true;
@@ -54,12 +62,7 @@ public class STPlanets {
             iconColor = Color.valueOf("c0c0c0");
 
             generator = new BlankPlanetGenerator();
-            meshLoader = () -> new NoiseMesh(
-                this, 1, 5, 0.2f, 4, 0.6f, 0.5f, 0.3f,
-                Color.valueOf("c0c0c0"),
-                Color.valueOf("6e6e6e"),
-                2, 0.6f, 0.5f, 0.5f
-            );
+            meshLoader = () -> new HexMesh(this, 2);
         }};
     }
 }
