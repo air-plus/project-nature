@@ -8,6 +8,7 @@ import mindustry.graphics.g3d.SunMesh;
 import mindustry.graphics.g3d.NoiseMesh;
 import mindustry.graphics.g3d.MultiMesh;
 import mindustry.graphics.g3d.HexSkyMesh;
+import mindustry.graphics.g3d.HexMesh;
 import arc.graphics.Color;
 import mindustry.game.Team;
 
@@ -61,7 +62,7 @@ public class STPlanets {
             iconColor = Color.valueOf("c0c0c0");
 
             generator = new BlankPlanetGenerator();
-            meshLoader = () -> new HexMesh(this, 2);
+            meshLoader = () -> new HexMesh(this, 6);
         }};
     }
 }
