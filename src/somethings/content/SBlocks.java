@@ -11,7 +11,7 @@ import mindustry.world.draw.DrawMulti;
 import mindustry.world.draw.DrawDefault;
 import mindustry.world.draw.DrawArcSmelt;
 
-public class STBlocks {
+public class SBlocks {
     public static Block coreArmored, zAlloyMixer;
 
     public static void load() {
@@ -20,7 +20,7 @@ public class STBlocks {
             size = 3;
             itemCapacity = 8000;
             unitCapModifier = 12;
-            unitType = STUnitTypes.hypha;
+            unitType = SUnitTypes.delta;
             alwaysUnlocked = true;
             isFirstTier = true;
 
@@ -48,7 +48,7 @@ public class STBlocks {
             consumeLiquid(Liquids.slag, 2f);
             consumePower(1.8f);
 
-            outputItem = new ItemStack(STItems.zAlloy, 2);
+            outputItem = new ItemStack(SItems.zAlloy, 2);
             drawer = new DrawMulti(
                 new DrawDefault(),
                 new DrawArcSmelt()

@@ -12,7 +12,7 @@ import mindustry.graphics.g3d.HexMesh;
 import arc.graphics.Color;
 import mindustry.game.Team;
 
-public class STPlanets {
+public class SPlanets {
     public static Planet solStar, terra, luna;
 
     public static void load() {
