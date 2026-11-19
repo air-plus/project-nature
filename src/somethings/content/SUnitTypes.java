@@ -9,7 +9,7 @@ public class SUnitTypes {
 
     public static void load() {
         delta = new UnitType("delta") {{
-            controller = u -> u.team.isAI() ? new BuilderAI() : new CommandAI();
+            controller = u -> u.team.isAI() ? new BuilderAI(true, 400f) : new CommandAI();
             isEnemy = false;
 
             health = 150f;

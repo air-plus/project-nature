@@ -16,7 +16,7 @@ public class SPlanets {
     public static Planet solStar, terra, luna;
 
     public static void load() {
-        solStar = new Planet("sol", null, 2.5f) {{
+        solStar = new Planet("sol", null, 5f) {{
             accessible = false;
 
             meshLoader = () -> new SunMesh(
