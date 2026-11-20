@@ -13,7 +13,7 @@ public class STHUnitTypes {
         delta = new UnitType("delta") {{
             constructor = LegsUnit::create;
             coreUnitDock = true;
-            controller = u -> new BuilderAI(true, 400f);
+            aiController = () -> new BuilderAI(true, 400f);
             isEnemy = false;
 
             health = 150f;
@@ -39,6 +39,11 @@ public class STHUnitTypes {
                 beamWidth = 0.8f;
 
                 repairSpeed = 3f;
+
+                targetUnits = false;
+                targetBuildings = true;
+                autoTarget = true;
+                controllable = true;
 
                 bullet = new BulletType() {{
                     maxRange = 80f;
