@@ -12,11 +12,11 @@ import mindustry.graphics.g3d.HexMesh;
 import arc.graphics.Color;
 import mindustry.game.Team;
 
-public class SPlanets {
+public class STHPlanets {
     public static Planet solStar, terra, luna;
 
     public static void load() {
-        solStar = new Planet("sol", null, 5f) {{
+        sol = new Planet("sol", null, 5f) {{
             accessible = false;
 
             meshLoader = () -> new SunMesh(
@@ -27,7 +27,7 @@ public class SPlanets {
             );
         }};
 
-        terra = new Planet("terra", solStar, 1f, 3) {{
+        terra = new Planet("terra", sol, 1f, 3) {{
             alwaysUnlocked = true;
             iconColor = Color.valueOf("697723");
 

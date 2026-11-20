@@ -3,7 +3,7 @@ package somethings.content;
 import mindustry.type.Item;
 import arc.graphics.Color;
 
-public class SItems {
+public class STHItems {
     public static Item zAlloy;
 
     public static void load() {

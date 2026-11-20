@@ -1,19 +1,19 @@
 package somethings;
 
 import mindustry.mod.Mod;
-import somethings.content.SItems;
-import somethings.content.SUnitTypes;
-import somethings.content.SBlocks;
-import somethings.content.SPlanets;
-import somethings.content.STechTree;
+import somethings.content.STHItems;
+import somethings.content.STHUnitTypes;
+import somethings.content.STHBlocks;
+import somethings.content.STHPlanets;
+import somethings.content.STHTechTree;
 
 public class SomethingsMod extends Mod {
     @Override
     public void loadContent() {
-        SItems.load();
-        SUnitTypes.load();
-        SBlocks.load();
-        SPlanets.load();
-        STechTree.load();
+        STHItems.load();
+        STHUnitTypes.load();
+        STHBlocks.load();
+        STHPlanets.load();
+        STHTechTree.load();
     }
 }
