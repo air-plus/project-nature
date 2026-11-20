@@ -4,6 +4,7 @@ import mindustry.type.UnitType;
 import mindustry.gen.LegsUnit;
 import mindustry.ai.types.BuilderAI;
 import mindustry.type.weapons.RepairBeamWeapon;
+import mindustry.graphics.Pal;
 import mindustry.entities.bullet.BulletType;
 
 public class STHUnitTypes {
@@ -44,6 +45,8 @@ public class STHUnitTypes {
                 targetBuildings = true;
                 autoTarget = false;
                 controllable = true;
+                laserColor = Pal.accent;
+                healColor = Pal.accent;
 
                 bullet = new BulletType() {{
                     maxRange = 80f;
