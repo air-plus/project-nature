@@ -42,7 +42,7 @@ public class STHUnitTypes {
 
                 targetUnits = false;
                 targetBuildings = true;
-                autoTarget = true;
+                autoTarget = false;
                 controllable = true;
 
                 bullet = new BulletType() {{
