@@ -1,8 +1,8 @@
 package somethings.content;
 
 import mindustry.type.UnitType;
+import mindustry.gen.LegsUnit;
 import mindustry.ai.types.BuilderAI;
-import mindustry.ai.types.CommandAI;
 import mindustry.type.weapons.RepairBeamWeapon;
 import mindustry.entities.bullet.BulletType;
 
@@ -11,7 +11,9 @@ public class STHUnitTypes {
 
     public static void load() {
         delta = new UnitType("delta") {{
-            controller = u -> u.team.isAI() ? new BuilderAI(true, 400f) : new CommandAI();
+            constructor = LegsUnit::create;
+            coreUnitDock = true;
+            controller = u -> new BuilderAI(true, 400f);
             isEnemy = false;
 
             health = 150f;
@@ -20,14 +22,15 @@ public class STHUnitTypes {
             accel = 0.1f;
             drag = 0.05f;
             rotateSpeed = 15f;
-            itemCapacity = 20;
+            itemCapacity = 40;
 
             legCount = 4;
+            legGroupSize = 2;
             legLength = 12f;
 
             mineTier = 1;
-            mineSpeed = 2f;
-            buildSpeed = 2f;
+            mineSpeed = 6f;
+            buildSpeed = 1.8f;
 
             weapons.add(new RepairBeamWeapon() {{
                 x = 0f;
