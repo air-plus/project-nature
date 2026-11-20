@@ -13,7 +13,7 @@ import arc.graphics.Color;
 import mindustry.game.Team;
 
 public class STHPlanets {
-    public static Planet solStar, terra, luna;
+    public static Planet sol, terra, luna;
 
     public static void load() {
         sol = new Planet("sol", null, 5f) {{
