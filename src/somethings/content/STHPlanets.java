@@ -9,7 +9,6 @@ import mindustry.graphics.g3d.SunMesh;
 import mindustry.graphics.g3d.NoiseMesh;
 import mindustry.graphics.g3d.MultiMesh;
 import mindustry.graphics.g3d.HexSkyMesh;
-import mindustry.graphics.g3d.HexMesh;
 import arc.graphics.Color;
 import mindustry.world.meta.Env;
 
@@ -36,14 +35,14 @@ public class STHPlanets {
             );
         }};
 
-        terra = new Planet("terra", sol, 1f, 3) {{
+        terra = new Planet("terra", sol, 1f, 2) {{
             alwaysUnlocked = true;
             iconColor = Color.valueOf("697723");
 
             generator = new BlankPlanetGenerator();
 
             meshLoader = () -> new NoiseMesh(
-                this, 114514, 5, 1f, 3, 0.5f, 1f, 1f,
+                this, 114514, 5, radius, 3, 0.5f, 1f, 1f,
                 Color.valueOf("697723"),
                 Color.valueOf("00477d"),
                 1, 0.5f, 1f, 0.5f
@@ -69,15 +68,31 @@ public class STHPlanets {
             };
         }};
 
-        luna = new Planet("luna", terra, 0.2f, 2) {{
+        luna = new Planet("luna", terra, 0.2f, 1) {{
             alwaysUnlocked = true;
-            iconColor = Color.valueOf("c0c0c0");
+            iconColor = Color.valueOf("8c8c8c");
 
             generator = new AsteroidGenerator();
             defaultEnv = Env.space;
             hasAtmosphere = false;
+            tidalLock = true;
 
-            meshLoader = () -> new HexMesh(this, 6);
+            meshLoader = () -> new MultiMesh(
+                new NoiseMesh(
+                    this, 114514, 5, radius,
+                    4, 0.55f, 0.8f, 0.5f,
+                    Color.valueOf("8c8c8c"),
+                    Color.valueOf("4f4f4f"),
+                    3, 0.5f, 1.2f, 0.45f
+                ),
+                new NoiseMesh(
+                    this, 1919810, 5,
+                    radius * 1.001f, 6, 0.6f, 3f, 0.3f,
+                    Color.valueOf("b0b0b0").a(0.35f),
+                    Color.valueOf("3a3a3a").a(0.35f),
+                    4, 0.5f, 2.5f, 0.5f
+                )
+            );
 
             ruleSetter = r -> {
                 r.lighting = true;
