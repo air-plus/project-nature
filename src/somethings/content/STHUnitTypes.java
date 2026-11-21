@@ -27,19 +27,18 @@ public class STHUnitTypes {
 
             health = 150f;
             hitSize = 8f;
-            speed = 1f;
+            speed = 3f;
             armor = 4f;
             rotateSpeed = 4f;
             itemCapacity = 40;
 
-            hovering = true;
             legCount = 4;
             legGroupSize = 2;
             legLength = 12f;
             legBaseOffset = 6f;
             legMoveSpace = 0.8f;
             legForwardScl = 0.5f;
-            legExtension = -2f;
+            legExtension = 0f;
             legPairOffset = 2f;
 
             mineTier = 1;
