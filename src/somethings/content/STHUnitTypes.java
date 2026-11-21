@@ -35,11 +35,11 @@ public class STHUnitTypes {
             legCount = 4;
             legGroupSize = 2;
             legLength = 12f;
-            legBaseOffset = 6f;
+            legBaseOffset = 4f;
             legMoveSpace = 0.8f;
             legForwardScl = 0.5f;
             legExtension = -2f;
-            legPairOffset = 0f;
+            legPairOffset = 2f;
 
             mineTier = 1;
             mineSpeed = 6f;
