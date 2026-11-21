@@ -27,7 +27,7 @@ public class STHUnitTypes {
 
             health = 150f;
             hitSize = 8f;
-            speed = 3f;
+            speed = 2f;
             armor = 4f;
             rotateSpeed = 4f;
             itemCapacity = 40;
@@ -38,8 +38,8 @@ public class STHUnitTypes {
             legBaseOffset = 6f;
             legMoveSpace = 0.8f;
             legForwardScl = 0.5f;
-            legExtension = 0f;
-            legPairOffset = 2f;
+            legExtension = -2f;
+            legPairOffset = 0f;
 
             mineTier = 1;
             mineSpeed = 6f;
