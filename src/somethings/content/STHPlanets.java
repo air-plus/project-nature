@@ -87,7 +87,7 @@ public class STHPlanets {
             hasAtmosphere = false;
             tidalLock = true;
             orbitRadius = 3f;
-            camRadius = 1f;
+            camRadius = 0.2f;
             minZoom = 2f;
             maxZoom = 4f;
 
