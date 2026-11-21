@@ -10,6 +10,7 @@ import mindustry.graphics.g3d.NoiseMesh;
 import mindustry.graphics.g3d.MultiMesh;
 import mindustry.graphics.g3d.HexSkyMesh;
 import arc.graphics.Color;
+import mindustry.game.Team;
 import mindustry.world.meta.Env;
 
 /**
@@ -40,6 +41,10 @@ public class STHPlanets {
             iconColor = Color.valueOf("697723");
 
             generator = new BlankPlanetGenerator();
+            defaultEnv = Env.terrestrial | Env.groundOil | Env.groundWater | Env.oxygen;
+            allowLaunchToNumbered = false;
+            defaultCore = STHBlocks.coreArmored;
+            landCloudColor = Color.valueOf("e0e0e0").a(0.5f);
 
             meshLoader = () -> new NoiseMesh(
                 this, 114514, 5, radius, 3, 0.5f, 1f, 1f,
@@ -62,6 +67,9 @@ public class STHPlanets {
 
             ruleSetter = r -> {
                 r.waveTeam = STHTeam.bioed;
+                r.placeRangeCheck = true;
+                r.derelictRepair = true;
+                r.coreDestroyClear = true;
                 r.weather.add(new Weather.WeatherEntry(Weathers.rain) {{
                     always = true;
                 }});
@@ -76,6 +84,8 @@ public class STHPlanets {
             defaultEnv = Env.space;
             hasAtmosphere = false;
             tidalLock = true;
+            orbitRadius = 3f;
+            maxZoom = 3f;
 
             meshLoader = () -> new MultiMesh(
                 new NoiseMesh(
@@ -95,6 +105,7 @@ public class STHPlanets {
             );
 
             ruleSetter = r -> {
+                r.waveTeam = Team.crux;
                 r.lighting = true;
                 r.ambientLight = new Color(0f, 0f, 0f, 0.8f);
                 r.solarMultiplier = 1.5f;
