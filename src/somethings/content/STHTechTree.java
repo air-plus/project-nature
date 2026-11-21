@@ -7,7 +7,14 @@ import static mindustry.content.TechTree.nodeRoot;
 import static mindustry.content.TechTree.node;
 import static mindustry.content.TechTree.nodeProduce;
 
+/**
+ * Tech tree.
+ *
+ * @author air-plus
+ * @version 1.0.0
+ */
 public class STHTechTree {
+    /** Load all tech tree. */
     public static void load() {
         STHPlanets.terra.techTree = nodeRoot("terra", STHBlocks.coreArmored, () -> {
             node(STHBlocks.zAlloyMixer, ItemStack.with(

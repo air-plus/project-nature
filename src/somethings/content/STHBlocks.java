@@ -11,9 +11,17 @@ import mindustry.world.draw.DrawMulti;
 import mindustry.world.draw.DrawDefault;
 import mindustry.world.draw.DrawArcSmelt;
 
+/**
+ * Blocks.
+ *
+ * @author air-plus
+ * @version 1.0.0
+ */
 public class STHBlocks {
+    /** All blocks. */
     public static Block coreArmored, zAlloyMixer;
 
+    /** Load all blocks. */
     public static void load() {
         coreArmored = new CoreBlock("core-armored") {{
             health = 12000;

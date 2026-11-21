@@ -11,10 +11,19 @@ import mindustry.graphics.g3d.HexSkyMesh;
 import mindustry.graphics.g3d.HexMesh;
 import arc.graphics.Color;
 import mindustry.game.Team;
+import mindustry.world.meta.Env;
 
+/**
+ * Planets.
+ *
+ * @author air-plus
+ * @version 1.0.0
+ */
 public class STHPlanets {
+    /** All planets. */
     public static Planet sol, terra, luna;
 
+    /** Load all planets. */
     public static void load() {
         sol = new Planet("sol", null, 5f) {{
             accessible = false;
@@ -32,6 +41,7 @@ public class STHPlanets {
             iconColor = Color.valueOf("697723");
 
             generator = new BlankPlanetGenerator();
+
             meshLoader = () -> new NoiseMesh(
                 this, 114514, 5, 1f, 3, 0.5f, 1f, 1f,
                 Color.valueOf("697723"),
@@ -50,6 +60,7 @@ public class STHPlanets {
                     4, 0.5f, 1.2f, 0.4f
                 )
             );
+
             ruleSetter = r -> {
                 r.weather.add(new Weather.WeatherEntry(Weathers.rain) {{
                     always = true;
@@ -62,7 +73,17 @@ public class STHPlanets {
             iconColor = Color.valueOf("c0c0c0");
 
             generator = new BlankPlanetGenerator();
+            defaultEnv = Env.space;
+            hasAtmosphere = false;
+
             meshLoader = () -> new HexMesh(this, 6);
+
+            ruleSetter = r -> {
+                r.lighting = true;
+                r.ambientLight = new Color(0f, 0f, 0f, 0.8f);
+                r.solarMultiplier = 1.5f;
+                r.weather.clear();
+            };
         }};
     }
 }

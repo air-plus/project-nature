@@ -7,9 +7,17 @@ import mindustry.type.weapons.RepairBeamWeapon;
 import mindustry.graphics.Pal;
 import mindustry.entities.bullet.BulletType;
 
+/**
+ * Unit types.
+ *
+ * @author air-plus
+ * @version 1.0.0
+ */
 public class STHUnitTypes {
+    /** All unit types. */
     public static UnitType delta;
 
+    /** Load all unit types. */
     public static void load() {
         delta = new UnitType("delta") {{
             constructor = LegsUnit::create;
