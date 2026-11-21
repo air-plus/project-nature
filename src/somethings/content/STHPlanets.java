@@ -45,7 +45,7 @@ public class STHPlanets {
             allowLaunchToNumbered = false;
             defaultCore = STHBlocks.coreArmored;
             landCloudColor = Color.valueOf("e0e0e0").a(0.5f);
-            orbitRadius = 10f;
+            orbitRadius = 1000f;
 
             meshLoader = () -> new NoiseMesh(
                 this, 114514, 5, radius, 3, 0.5f, 1f, 1f,
@@ -87,8 +87,8 @@ public class STHPlanets {
             hasAtmosphere = false;
             tidalLock = true;
             orbitRadius = 3f;
-            minZoom = 1f;
-            maxZoom = 3f;
+            minZoom = 2f;
+            maxZoom = 1f;
 
             meshLoader = () -> new MultiMesh(
                 new NoiseMesh(
