@@ -2,6 +2,7 @@ package somethings;
 
 import mindustry.mod.Mod;
 import somethings.content.STHItems;
+import somethings.content.STHTeam;
 import somethings.content.STHUnitTypes;
 import somethings.content.STHBlocks;
 import somethings.content.STHPlanets;
@@ -18,6 +19,7 @@ public class SomethingsMod extends Mod {
     @Override
     public void loadContent() {
         STHItems.load();
+        STHTeam.load();
         STHUnitTypes.load();
         STHBlocks.load();
         STHPlanets.load();
