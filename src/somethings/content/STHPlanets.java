@@ -36,7 +36,7 @@ public class STHPlanets {
             );
         }};
 
-        terra = new Planet("terra", sol, 1f, 2) {{
+        terra = new Planet("terra", sol, 1f, 3) {{
             alwaysUnlocked = true;
             iconColor = Color.valueOf("697723");
 
@@ -87,8 +87,8 @@ public class STHPlanets {
             hasAtmosphere = false;
             tidalLock = true;
             orbitRadius = 3f;
-            minZoom = 1.5f;
-            maxZoom = 2f;
+            minZoom = 2f;
+            maxZoom = 3f;
 
             meshLoader = () -> new MultiMesh(
                 new NoiseMesh(
