@@ -24,38 +24,38 @@ public class STHBlocks {
     /** Load all blocks. */
     public static void load() {
         coreArmored = new CoreBlock("core-armored") {{
+            alwaysUnlocked = true;
             health = 12000;
             size = 3;
             itemCapacity = 8000;
-            unitCapModifier = 16;
-            unitType = STHUnitTypes.delta;
-            alwaysUnlocked = true;
-
             requirements(Category.effect, ItemStack.with(
                 Items.copper, 2000,
                 Items.lead, 1000
             ));
+
+            unitCapModifier = 16;
+            unitType = STHUnitTypes.delta;
         }};
 
         zAlloyMixer = new GenericCrafter("z-alloy-mixer") {{
             health = 8000;
             size = 3;
-            craftTime = 120f;
-
             requirements(Category.crafting, ItemStack.with(
                 Items.copper, 4000,
                 Items.lead, 4000,
                 Items.silicon, 2000,
                 Items.surgeAlloy, 800
             ));
+
+            craftTime = 120f;
             consumeItems(ItemStack.with(
                 Items.surgeAlloy, 2,
                 Items.silicon, 1
             ));
             consumeLiquid(Liquids.slag, 2f);
             consumePower(1.8f);
-
             outputItem = new ItemStack(STHItems.zAlloy, 2);
+
             drawer = new DrawMulti(
                 new DrawDefault(),
                 new DrawArcSmelt()
