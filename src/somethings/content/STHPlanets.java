@@ -3,16 +3,14 @@ package somethings.content;
 import mindustry.type.Planet;
 import mindustry.type.Weather;
 import mindustry.content.Weathers;
-import mindustry.maps.planet.SerpuloPlanetGenerator;
-import mindustry.maps.planet.AsteroidGenerator;
 import mindustry.maps.generators.BlankPlanetGenerator;
+import mindustry.maps.planet.AsteroidGenerator;
 import mindustry.graphics.g3d.SunMesh;
 import mindustry.graphics.g3d.NoiseMesh;
 import mindustry.graphics.g3d.MultiMesh;
 import mindustry.graphics.g3d.HexSkyMesh;
 import mindustry.graphics.g3d.HexMesh;
 import arc.graphics.Color;
-import mindustry.game.Team;
 import mindustry.world.meta.Env;
 
 /**
@@ -42,7 +40,7 @@ public class STHPlanets {
             alwaysUnlocked = true;
             iconColor = Color.valueOf("697723");
 
-            generator = new SerpuloPlanetGenerator();
+            generator = new BlankPlanetGenerator();
 
             meshLoader = () -> new NoiseMesh(
                 this, 114514, 5, 1f, 3, 0.5f, 1f, 1f,
@@ -63,8 +61,8 @@ public class STHPlanets {
                 )
             );
 
-            // TODO: Set `r.waveTeam`.
             ruleSetter = r -> {
+                r.waveTeam = STHTeam.bioed;
                 r.weather.add(new Weather.WeatherEntry(Weathers.rain) {{
                     always = true;
                 }});

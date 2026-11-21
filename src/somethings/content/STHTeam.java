@@ -23,7 +23,12 @@ public class STHTeam {
     /** All teams. */
     public static Team bioed;
 
-    /** Load all teams. */
+    /**
+     * Load all teams.
+     *
+     * @throws RuntimeException If failed to register team
+     * @see setStaticFinalField(Field, Object)
+     */
     public static void load() {
         bioed = Team.all[27];
         bioed.name = "bioed";
@@ -61,7 +66,11 @@ public class STHTeam {
 
     /**
      * Set a static final field.
-     * Uses `sun.misc.Unsafe` (via reflection) on desktop, and plain reflection on mobile.
+     *
+     * <p>Uses `sun.misc.Unsafe` (via reflection) on desktop, and plain reflection on mobile.
+     *
+     * @param field The Field
+     * @param value The Object
      */
     private static void setStaticFinalField(Field field, Object value) throws Exception {
         if (!Vars.mobile) {
