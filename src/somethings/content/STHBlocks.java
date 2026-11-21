@@ -26,7 +26,7 @@ public class STHBlocks {
         coreArmored = new CoreBlock("core-armored") {{
             alwaysUnlocked = true;
             health = 12000;
-            size = 3;
+            size = 4;
             itemCapacity = 8000;
             requirements(Category.effect, ItemStack.with(
                 Items.copper, 2000,

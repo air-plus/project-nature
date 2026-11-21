@@ -3,6 +3,8 @@ package somethings.content;
 import mindustry.type.Planet;
 import mindustry.type.Weather;
 import mindustry.content.Weathers;
+import mindustry.maps.planet.SerpuloPlanetGenerator;
+import mindustry.maps.planet.AsteroidGenerator;
 import mindustry.maps.generators.BlankPlanetGenerator;
 import mindustry.graphics.g3d.SunMesh;
 import mindustry.graphics.g3d.NoiseMesh;
@@ -40,7 +42,7 @@ public class STHPlanets {
             alwaysUnlocked = true;
             iconColor = Color.valueOf("697723");
 
-            generator = new BlankPlanetGenerator();
+            generator = new SerpuloPlanetGenerator();
 
             meshLoader = () -> new NoiseMesh(
                 this, 114514, 5, 1f, 3, 0.5f, 1f, 1f,
@@ -61,6 +63,7 @@ public class STHPlanets {
                 )
             );
 
+            // TODO: Set `r.waveTeam`.
             ruleSetter = r -> {
                 r.weather.add(new Weather.WeatherEntry(Weathers.rain) {{
                     always = true;
@@ -72,7 +75,7 @@ public class STHPlanets {
             alwaysUnlocked = true;
             iconColor = Color.valueOf("c0c0c0");
 
-            generator = new BlankPlanetGenerator();
+            generator = new AsteroidGenerator();
             defaultEnv = Env.space;
             hasAtmosphere = false;
 
