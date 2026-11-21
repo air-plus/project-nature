@@ -19,22 +19,21 @@ const allField = teamClass.getDeclaredField("all");
 allField.setAccessible(true);
 
 const currentAll = Team.all;
-if (currentAll.length < 9) {
-    const newAll = java.lang.reflect.Array.newInstance(teamClass, 9);
+if (currentAll.length < 28) {
+    const newAll = java.lang.reflect.Array.newInstance(teamClass, 28);
     for (let i = 0; i < currentAll.length; i++) newAll[i] = currentAll[i];
-    for (let i = currentAll.length; i < 9; i++) newAll[i] = new Team(i, "team-" + i);
+    for (let i = currentAll.length; i < 28; i++) newAll[i] = new Team(i, "team-" + i);
     setStaticFinalField(allField, newAll);
 }
 
 const myTeam = Team.all[27];
 myTeam.name = "bioed";
-myTeam.color.set(Color.valueOf("00ffce"));
+myTeam.color.set(Color.valueOf("006400"));
 myTeam.setPalette(
-    Color.valueOf("00ffce"),
-    Color.valueOf("3ad2b5"),
-    Color.valueOf("189885")
+    Color.valueOf("006400"),
+    Color.valueOf("008000"),
+    Color.valueOf("004d00")
 );
-if (!isDesktop) myTeam.ignoreUnitCap = true;
 
 const baseField = teamClass.getDeclaredField("baseTeams");
 baseField.setAccessible(true);
