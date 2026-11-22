@@ -99,8 +99,8 @@ public class STHPlanets {
                     3, 0.5f, 1.2f, 0.45f
                 ),
                 new NoiseMesh(
-                    this, 1919810, 5, radius,
-                    6, 0.6f, 3f, 0.3f,
+                    this, 1919810, 5,
+                    radius * 1.02f, 6, 0.6f, 3f, 0.3f,
                     Color.valueOf("b0b0b0").a(0.35f),
                     Color.valueOf("3a3a3a").a(0.35f),
                     4, 0.5f, 2.5f, 0.5f
