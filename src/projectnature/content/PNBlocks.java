@@ -29,7 +29,7 @@ public class PNBlocks {
             ));
 
             unitCapModifier = 16;
-            unitType = STHUnitTypes.delta;
+            unitType = PNUnitTypes.delta;
         }};
     }
 }
