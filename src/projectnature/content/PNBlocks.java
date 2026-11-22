@@ -3,6 +3,12 @@ package projectnature.content;
 import mindustry.world.Block;
 import mindustry.world.blocks.environment.OreBlock;
 import mindustry.world.blocks.production.Drill;
+import mindustry.world.blocks.defense.turrets.ItemTurret;
+import mindustry.entities.bullet.BasicBulletType;
+import mindustry.entities.part.RegionPart;
+import mindustry.graphics.Pal;
+import mindustry.world.draw.DrawTurret;
+import mindustry.entities.part.DrawPart.PartProgress;
 import mindustry.world.blocks.distribution.Duct;
 import mindustry.world.blocks.distribution.DuctRouter;
 import mindustry.world.blocks.distribution.OverflowDuct;
@@ -31,10 +37,12 @@ public class PNBlocks {
 
     oreIron,
 
+    bacterium,
+
     iterativeMechanicalDrill,
 
-    copperDuct, copperDuctRouter, copperOverflowDuct,
-    copperUnderflowDuct, copperDuctBridge,
+    copperDuctRouter, copperOverflowDuct, copperUnderflowDuct,
+    copperDuctBridge, copperDuct,
 
     iterativeCombustionGenerator, iterativePowerNode, iterativePowerNodeLarge,
     iterativeSolarPanel, largeIterativeSolarPanel,
@@ -64,14 +72,34 @@ public class PNBlocks {
             consumeLiquid(Liquids.water, 0.05f).boost();
         }};
 
-        copperDuct = new Duct("copper-duct") {{
-            health = 40;
-            size = 1;
-            requirements(Category.distribution, ItemStack.with(
-                Items.copper, 1
+        bacterium = new ItemTurret("bacterium") {{
+            size = 2;
+            health = 400 * size * size;
+            requirements(Category.turret, ItemStack.with(
+                Items.copper, 30
             ));
 
-            speed = 4f;
+            ammo(
+                Items.copper, new BasicBulletType(2.5f, 11) {{
+                    width = 7f;
+                    height = 9f;
+                    lifetime = 60f;
+                    ammoMultiplier = 2;
+                }}
+            );
+            drawer = new DrawTurret() {{
+                parts.add(new RegionPart("-barrel") {{
+                    progress = PartProgress.recoil;
+                    x = 3f;
+                    moveY = -2f;
+                    heatColor = Pal.turretHeat;
+                    mirror = true;
+                }});
+            }};
+            recoil = 2f;
+            shootY = 6f;
+            consumePower(1f);
+            coolant = consumeCoolant(0.1f);
         }};
 
         copperDuctRouter = new DuctRouter("copper-duct-router") {{
@@ -115,6 +143,17 @@ public class PNBlocks {
             speed = 4f;
             range = 6;
             buildCostMultiplier = 2f;
+        }};
+
+        copperDuct = new Duct("copper-duct") {{
+            health = 40;
+            size = 1;
+            requirements(Category.distribution, ItemStack.with(
+                Items.copper, 1
+            ));
+
+            speed = 4f;
+            bridgeReplacement = copperDuctBridge;
         }};
 
         iterativeCombustionGenerator = new ConsumeGenerator("iterative-combustion-generator") {{
