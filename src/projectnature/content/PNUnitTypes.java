@@ -1,4 +1,4 @@
-package somethings.content;
+package projectnature.content;
 
 import mindustry.type.UnitType;
 import mindustry.gen.LegsUnit;
@@ -13,7 +13,7 @@ import mindustry.entities.bullet.BulletType;
  * @author air-plus
  * @version 1.0.0
  */
-public class STHUnitTypes {
+public class PNUnitTypes {
     /** All unit types. */
     public static UnitType delta;
 

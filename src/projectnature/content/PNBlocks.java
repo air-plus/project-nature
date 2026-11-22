@@ -1,4 +1,4 @@
-package somethings.content;
+package projectnature.content;
 
 import mindustry.world.Block;
 import mindustry.world.blocks.storage.CoreBlock;
@@ -12,7 +12,7 @@ import mindustry.content.Items;
  * @author air-plus
  * @version 1.0.0
  */
-public class STHBlocks {
+public class PNBlocks {
     /** All blocks. */
     public static Block coreArmored;
 

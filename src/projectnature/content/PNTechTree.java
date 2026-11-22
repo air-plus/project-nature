@@ -1,4 +1,4 @@
-package somethings.content;
+package projectnature.content;
 
 import static mindustry.content.TechTree.nodeRoot;
 import static mindustry.content.TechTree.node;
@@ -10,12 +10,12 @@ import static mindustry.content.TechTree.nodeProduce;
  * @author air-plus
  * @version 1.0.0
  */
-public class STHTechTree {
+public class PNTechTree {
     /** Load all tech tree. */
     public static void load() {
         // TODO: Add tech tree.
-        STHPlanets.terra.techTree = nodeRoot("terra", STHBlocks.coreArmored, () -> {});
+        PNPlanets.terra.techTree = nodeRoot("terra", PNBlocks.coreArmored, () -> {});
 
-        STHPlanets.luna.techTree = STHPlanets.terra.techTree;
+        PNPlanets.luna.techTree = PNPlanets.terra.techTree;
     }
 }

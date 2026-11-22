@@ -1,14 +1,14 @@
 #the mod name as displayed in-game
-displayName: "Somethings"
+displayName: "Project: Nature"
 
 #the internal name of your mod
-name: "somethings"
+name: "project-nature"
 
 #your name
 author: "air-plus"
 
 #the fully qualified main class of the mod
-main: "somethings.SomethingsMod"
+main: "projectnature.ProjectNatureMod"
 
 #the mod description as seen in the mod dialog
 description: "The mod add somethings."

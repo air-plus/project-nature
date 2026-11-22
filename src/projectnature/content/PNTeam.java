@@ -1,4 +1,4 @@
-package somethings.content;
+package projectnature.content;
 
 import arc.Core;
 import arc.Events;
@@ -19,7 +19,7 @@ import java.lang.reflect.Method;
  * @author air-plus
  * @version 1.0.0
  */
-public class STHTeam {
+public class PNTeam {
     /** All teams. */
     public static Team bioed;
 

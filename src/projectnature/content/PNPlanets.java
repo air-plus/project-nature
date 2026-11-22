@@ -1,4 +1,4 @@
-package somethings.content;
+package projectnature.content;
 
 import mindustry.type.Planet;
 import mindustry.type.Weather;
@@ -20,7 +20,7 @@ import mindustry.world.meta.Env;
  * @author air-plus
  * @version 1.0.0
  */
-public class STHPlanets {
+public class PNPlanets {
     /** All planets. */
     public static Planet sol, terra, luna;
 
@@ -44,7 +44,7 @@ public class STHPlanets {
             generator = new BlankPlanetGenerator();
             defaultEnv = Env.terrestrial | Env.groundOil | Env.groundWater | Env.oxygen;
             allowLaunchToNumbered = false;
-            defaultCore = STHBlocks.coreArmored;
+            defaultCore = PNBlocks.coreArmored;
             landCloudColor = Color.valueOf("e0e0e0").a(0.5f);
             orbitRadius = 100f;
 
@@ -68,7 +68,7 @@ public class STHPlanets {
             );
 
             ruleSetter = r -> {
-                r.waveTeam = STHTeam.bioed;
+                r.waveTeam = PNTeam.bioed;
                 r.placeRangeCheck = true;
                 r.derelictRepair = true;
                 r.coreDestroyClear = true;
@@ -84,7 +84,7 @@ public class STHPlanets {
 
             generator = new AsteroidGenerator();
             defaultEnv = Env.space;
-            defaultCore = STHBlocks.coreArmored;
+            defaultCore = PNBlocks.coreArmored;
             hasAtmosphere = false;
             tidalLock = true;
             orbitRadius = 3f;
