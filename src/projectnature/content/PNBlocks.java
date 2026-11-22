@@ -100,6 +100,7 @@ public class PNBlocks {
                     }}
                 );
             }};
+            range = 150f;
             shoot = new ShootAlternate(3f);
             recoils = 2;
             shootY = 6f;
