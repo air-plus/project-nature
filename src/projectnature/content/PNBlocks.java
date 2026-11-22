@@ -4,6 +4,7 @@ import mindustry.world.Block;
 import mindustry.world.blocks.environment.OreBlock;
 import mindustry.world.blocks.production.Drill;
 import mindustry.world.blocks.distribution.Duct;
+import mindustry.world.blocks.distribution.DuctRouter;
 import mindustry.world.blocks.distribution.OverflowDuct;
 import mindustry.world.blocks.distribution.DuctBridge;
 import mindustry.world.blocks.power.ConsumeGenerator;
