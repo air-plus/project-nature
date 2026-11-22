@@ -89,8 +89,6 @@ public class STHPlanets {
             tidalLock = true;
             orbitRadius = 3f;
             camRadius = 0.1f;
-            minZoom = 2f;
-            maxZoom = 4f;
 
             meshLoader = () -> new MultiMesh(
                 new NoiseMesh(
