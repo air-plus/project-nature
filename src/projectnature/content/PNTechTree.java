@@ -2,6 +2,7 @@ package projectnature.content;
 
 import mindustry.content.Items;
 import mindustry.content.Blocks;
+import mindustry.content.Liquids;
 
 import static mindustry.content.TechTree.nodeRoot;
 import static mindustry.content.TechTree.node;
@@ -17,8 +18,18 @@ public class PNTechTree {
     /** Load all tech tree. */
     public static void load() {
         PNPlanets.terra.techTree = nodeRoot("terra", PNBlocks.coreArmored, () -> {
-            node(PNBlocks.stgGenerator, () -> {
-                node(PNBlocks.iterativePowerNode, () -> {});
+            node(PNBlocks.iterativeMechanicalDrill, () -> {});
+
+            node(PNBlocks.copperDuct, () -> {});
+
+            node(PNBlocks.iterativeCombustionGenerator, () -> {
+                node(PNBlocks.iterativeSolarPanel, () -> {
+                    node(PNBlocks.largeIterativeSolarPanel, () -> {});
+                });
+
+                node(PNBlocks.iterativePowerNode, () -> {
+                    node(PNBlocks.iterativePowerNodeLarge, () -> {});
+                });
             });
 
             node(Blocks.copperWall, () -> {
@@ -32,6 +43,8 @@ public class PNTechTree {
             nodeProduce(Items.copper, () -> {
                 nodeProduce(PNItems.iron, () -> {
                     nodeProduce(Items.coal, () -> {});
+                    nodeProduce(Items.sand, () -> {});
+                    nodeProduce(Liquids.water, () -> {});
                 });
             });
         });

@@ -41,7 +41,7 @@ public class PNUnitTypes {
             legExtension = -2f;
             legPairOffset = 2f;
 
-            mineTier = 1;
+            mineTier = 2;
             mineSpeed = 6f;
             buildSpeed = 1.8f;
 

@@ -2,14 +2,19 @@ package projectnature.content;
 
 import mindustry.world.Block;
 import mindustry.world.blocks.environment.OreBlock;
+import mindustry.world.blocks.production.Drill;
+import mindustry.world.blocks.distribution.Duct;
 import mindustry.world.blocks.power.ConsumeGenerator;
+import mindustry.world.consumers.ConsumeItemFlammable;
 import mindustry.world.consumers.ConsumeLiquidFlammable;
 import mindustry.world.blocks.power.PowerNode;
+import mindustry.world.blocks.power.SolarGenerator;
 import mindustry.world.blocks.defense.Wall;
 import mindustry.world.blocks.storage.CoreBlock;
 import mindustry.type.ItemStack;
 import mindustry.type.Category;
 import mindustry.content.Items;
+import mindustry.content.Liquids;
 
 /**
  * Blocks.
@@ -19,10 +24,20 @@ import mindustry.content.Items;
  */
 public class PNBlocks {
     /** All blocks. */
-    public static Block oreIron;
-    public static Block stgGenerator, iterativePowerNode;
-    public static Block ironWall, ironWallLarge;
-    public static Block coreArmored;
+    public static Block
+
+    oreIron,
+
+    iterativeMechanicalDrill,
+
+    copperDuct,
+
+    iterativeCombustionGenerator, iterativePowerNode, iterativePowerNodeLarge,
+    iterativeSolarPanel, largeIterativeSolarPanel,
+
+    ironWall, ironWallLarge,
+
+    coreArmored;
 
     /** Load all blocks. */
     public static void load() {
@@ -32,7 +47,30 @@ public class PNBlocks {
             oreScale = 23.47619f;
         }};
 
-        stgGenerator = new ConsumeGenerator("stg-generator") {{
+        iterativeMechanicalDrill = new Drill("iterative-mechanical-drill") {{
+            health = 160;
+            size = 2;
+            requirements(Category.production, ItemStack.with(
+                Items.copper, 12
+            ));
+
+            tier = 2;
+            drillTime = 640;
+            consumePower(0.1f);
+            consumeLiquid(Liquids.water, 0.05f).boost();
+        }};
+
+        copperDuct = new Duct("copper-duct") {{
+            health = 40;
+            size = 1;
+            requirements(Category.distribution, ItemStack.with(
+                Items.copper, 1
+            ));
+
+            speed = 4f;
+        }};
+
+        iterCombustionGenerator = new ConsumeGenerator("iterative-combustion-generator") {{
             health = 20;
             size = 1;
             requirements(Category.power, ItemStack.with(
@@ -40,8 +78,10 @@ public class PNBlocks {
                 PNItems.iron, 10
             ));
 
+            craftTime = 60f;
             itemDuration = 60;
             powerProduction = 10;
+            consume(new ConsumeItemFlammable());
             consume(new ConsumeLiquidFlammable());
         }};
 
@@ -56,6 +96,41 @@ public class PNBlocks {
             maxNodes = 10;
             laserRange = 10;
             consumePowerBuffered(400f);
+        }};
+
+        iterativePowerNodeLarge = new PowerNode("iterative-power-node-large") {{
+            health = 20;
+            size = 2;
+            requirements(Category.power, ItemStack.with(
+                Items.copper, 8,
+                PNItems.iron, 12
+            ));
+
+            maxNodes = 15;
+            laserRange = 20;
+            consumePowerBuffered(4000f);
+        }};
+
+        iterativeSolarPanel = new SolarGenerator("iterative-solar-panel") {{
+            health = 40;
+            size = 1;
+            requirements(Category.power, ItemStack.with(
+                Items.copper, 10,
+                PNItems.iron, 5
+            ));
+
+            powerProduction = 0.12f;
+        }};
+
+        largeIterativeSolarPanel = new SolarGenerator("iterative-solar-panel-large") {{
+            health = 400;
+            size = 3;
+            requirements(Category.power, ItemStack.with(
+                Items.copper, 80,
+                PNItems.iron, 60
+            ));
+
+            powerProduction = 1.6f;
         }};
 
         ironWall = new Wall("iron-wall") {{
