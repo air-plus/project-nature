@@ -9,6 +9,7 @@ import mindustry.entities.part.RegionPart;
 import mindustry.graphics.Pal;
 import mindustry.world.draw.DrawTurret;
 import mindustry.entities.part.DrawPart.PartProgress;
+import mindustry.entities.pattern.ShootAlternate;
 import mindustry.world.blocks.distribution.Duct;
 import mindustry.world.blocks.distribution.DuctRouter;
 import mindustry.world.blocks.distribution.OverflowDuct;
@@ -88,15 +89,19 @@ public class PNBlocks {
                 }}
             );
             drawer = new DrawTurret() {{
-                parts.add(new RegionPart("-barrel") {{
-                    progress = PartProgress.recoil;
-                    x = 3f;
-                    moveY = -2f;
-                    heatColor = Pal.turretHeat;
-                    mirror = true;
-                }});
+                parts.add(
+                    new RegionPart("-barrel") {{
+                        progress = PartProgress.recoil;
+                        recoilIndex = 0;
+                        x = -3f;
+                        moveY = -2f;
+                        heatColor = Pal.turretHeat;
+                        mirror = true
+                    }}
+                );
             }};
-            recoil = 2f;
+            shoot = new ShootAlternate(3f);
+            recoils = 2;
             shootY = 6f;
             consumePower(1f);
             coolant = consumeCoolant(0.1f);
