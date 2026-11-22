@@ -70,7 +70,7 @@ public class PNBlocks {
             speed = 4f;
         }};
 
-        iterCombustionGenerator = new ConsumeGenerator("iterative-combustion-generator") {{
+        iterativeCombustionGenerator = new ConsumeGenerator("iterative-combustion-generator") {{
             health = 20;
             size = 1;
             requirements(Category.power, ItemStack.with(
@@ -78,9 +78,8 @@ public class PNBlocks {
                 PNItems.iron, 10
             ));
 
-            craftTime = 60f;
-            itemDuration = 60;
-            powerProduction = 10;
+            itemDuration = 60f;
+            powerProduction = 10f;
             consume(new ConsumeItemFlammable());
             consume(new ConsumeLiquidFlammable());
         }};
