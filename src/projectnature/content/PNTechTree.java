@@ -13,8 +13,9 @@ import static mindustry.content.TechTree.nodeProduce;
 public class PNTechTree {
     /** Load all tech tree. */
     public static void load() {
-        // TODO: Add tech tree.
-        PNPlanets.terra.techTree = nodeRoot("terra", PNBlocks.coreArmored, () -> {});
+        PNPlanets.terra.techTree = nodeRoot("terra", PNBlocks.coreArmored, () -> {
+            nodeProduce(PNItems.iron, () -> {});
+        });
 
         PNPlanets.luna.techTree = PNPlanets.terra.techTree;
     }
