@@ -18,12 +18,12 @@ public class PNTechTree {
     public static void load() {
         PNPlanets.terra.techTree = nodeRoot("terra", PNBlocks.coreArmored, () -> {
             node(PNBlocks.stgGenerator, () -> {
-                node(PNBlocks.iterativePowerNode);
+                node(PNBlocks.iterativePowerNode, () -> {});
             });
 
             node(Blocks.copperWall, () -> {
                 node(PNBlocks.ironWall, () -> {
-                    node(PNBlocks.ironWallLarge);
+                    node(PNBlocks.ironWallLarge, () -> {});
                 });
 
                 node(Blocks.copperWallLarge);
@@ -31,7 +31,7 @@ public class PNTechTree {
 
             nodeProduce(Items.copper, () -> {
                 nodeProduce(PNItems.iron, () -> {
-                    nodeProduce(Items.coal);
+                    nodeProduce(Items.coal, () -> {});
                 });
             });
         });

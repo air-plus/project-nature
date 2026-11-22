@@ -3,7 +3,7 @@ package projectnature.content;
 import mindustry.world.Block;
 import mindustry.world.blocks.environment.OreBlock;
 import mindustry.world.blocks.power.ConsumeGenerator;
-import mindustry.world.consumer.ConsumeLiquidFlammable;
+import mindustry.world.consumers.ConsumeLiquidFlammable;
 import mindustry.world.blocks.power.PowerNode;
 import mindustry.world.blocks.defense.Wall;
 import mindustry.world.blocks.storage.CoreBlock;
@@ -66,7 +66,7 @@ public class PNBlocks {
             ));
         }};
 
-        ironWallLargw = new Wall("iron-wall-large") {{
+        ironWallLarge = new Wall("iron-wall-large") {{
             health = 80 * 4 * 4;
             size = 2;
             requirements(Category.defense, ItemStack.with(
