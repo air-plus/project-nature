@@ -10,6 +10,7 @@ import mindustry.graphics.g3d.NoiseMesh;
 import mindustry.graphics.g3d.MultiMesh;
 import mindustry.graphics.g3d.HexSkyMesh;
 import arc.graphics.Color;
+import mindustry.graphics.Pal;
 import mindustry.game.Team;
 import mindustry.world.meta.Env;
 
@@ -50,7 +51,7 @@ public class STHPlanets {
             meshLoader = () -> new NoiseMesh(
                 this, 114514, 5, radius, 3, 0.5f, 1f, 1f,
                 Color.valueOf("697723"),
-                Color.valueOf("00477d"),
+                Pal.water;,
                 1, 0.5f, 1f, 0.5f
             );
             cloudMeshLoader = () -> new MultiMesh(

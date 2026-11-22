@@ -2,14 +2,9 @@ package somethings.content;
 
 import mindustry.world.Block;
 import mindustry.world.blocks.storage.CoreBlock;
-import mindustry.world.blocks.production.GenericCrafter;
 import mindustry.type.ItemStack;
 import mindustry.type.Category;
 import mindustry.content.Items;
-import mindustry.content.Liquids;
-import mindustry.world.draw.DrawMulti;
-import mindustry.world.draw.DrawDefault;
-import mindustry.world.draw.DrawArcSmelt;
 
 /**
  * Blocks.
@@ -19,7 +14,7 @@ import mindustry.world.draw.DrawArcSmelt;
  */
 public class STHBlocks {
     /** All blocks. */
-    public static Block coreArmored, zAlloyMixer;
+    public static Block coreArmored;
 
     /** Load all blocks. */
     public static void load() {
@@ -35,31 +30,6 @@ public class STHBlocks {
 
             unitCapModifier = 16;
             unitType = STHUnitTypes.delta;
-        }};
-
-        zAlloyMixer = new GenericCrafter("z-alloy-mixer") {{
-            health = 8000;
-            size = 3;
-            requirements(Category.crafting, ItemStack.with(
-                Items.copper, 4000,
-                Items.lead, 4000,
-                Items.silicon, 2000,
-                Items.surgeAlloy, 800
-            ));
-
-            craftTime = 120f;
-            consumeItems(ItemStack.with(
-                Items.surgeAlloy, 2,
-                Items.silicon, 1
-            ));
-            consumeLiquid(Liquids.slag, 2f);
-            consumePower(1.8f);
-            outputItem = new ItemStack(STHItems.zAlloy, 2);
-
-            drawer = new DrawMulti(
-                new DrawDefault(),
-                new DrawArcSmelt()
-            );
         }};
     }
 }
