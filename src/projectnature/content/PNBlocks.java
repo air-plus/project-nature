@@ -4,6 +4,8 @@ import mindustry.world.Block;
 import mindustry.world.blocks.environment.OreBlock;
 import mindustry.world.blocks.production.Drill;
 import mindustry.world.blocks.distribution.Duct;
+import mindustry.world.blocks.distribution.OverflowDuct;
+import mindustry.world.blocks.distribution.DuctBridge;
 import mindustry.world.blocks.power.ConsumeGenerator;
 import mindustry.world.consumers.ConsumeItemFlammable;
 import mindustry.world.consumers.ConsumeLiquidFlammable;
@@ -30,7 +32,8 @@ public class PNBlocks {
 
     iterativeMechanicalDrill,
 
-    copperDuct,
+    copperDuct, copperDuctRouter, copperOverflowDuct,
+    copperUnderflowDuct, copperDuctBridge,
 
     iterativeCombustionGenerator, iterativePowerNode, iterativePowerNodeLarge,
     iterativeSolarPanel, largeIterativeSolarPanel,
@@ -68,6 +71,49 @@ public class PNBlocks {
             ));
 
             speed = 4f;
+        }};
+
+        copperDuctRouter = new DuctRouter("copper-duct-router") {{
+            health = 40;
+            size = 1;
+            requirements(Category.distribution, ItemStack.with(
+                Items.copper, 4
+            ));
+
+            speed = 4f;
+        }};
+
+        copperOverflowDuct = new OverflowDuct("copper-overflow-duct") {{
+            health = 40;
+            size = 1;
+            requirements(Category.distribution, ItemStack.with(
+                Items.copper, 4
+            ));
+
+            speed = 4f;
+        }};
+
+        copperUnderflowDuct = new OverflowDuct("copper-underflow-duct") {{
+            health = 40;
+            size = 1;
+            requirements(Category.distribution, ItemStack.with(
+                Items.copper, 4
+            ));
+
+            speed = 4f;
+            invert = true;
+        }};
+
+        copperDuctBridge = new DuctBridge("copper-duct-bridge") {{
+            health = 40;
+            size = 1;
+            requirements(Category.distribution, ItemStack.with(
+                Items.copper, 6
+            ));
+
+            speed = 4f;
+            range = 6;
+            buildCostMultiplier = 2f;
         }};
 
         iterativeCombustionGenerator = new ConsumeGenerator("iterative-combustion-generator") {{

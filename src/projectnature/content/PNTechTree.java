@@ -20,7 +20,14 @@ public class PNTechTree {
         PNPlanets.terra.techTree = nodeRoot("terra", PNBlocks.coreArmored, () -> {
             node(PNBlocks.iterativeMechanicalDrill, () -> {});
 
-            node(PNBlocks.copperDuct, () -> {});
+            node(PNBlocks.copperDuct, () -> {
+                node(PNBlocks.copperDuctRouter, () -> {
+                    node(PNBlocks.copperOverflowDuct, () -> {});
+                    node(PNBlocks.copperUnderflowDuct, () -> {});
+                });
+
+                node(PNBlocks.copperDuctBridge, () -> {});
+            });
 
             node(PNBlocks.iterativeCombustionGenerator, () -> {
                 node(PNBlocks.iterativeSolarPanel, () -> {
