@@ -1,6 +1,7 @@
 package projectnature.content;
 
 import mindustry.world.Block;
+import mindustry.world.blocks.environment.OreBlock;
 import mindustry.world.blocks.storage.CoreBlock;
 import mindustry.type.ItemStack;
 import mindustry.type.Category;
@@ -14,10 +15,16 @@ import mindustry.content.Items;
  */
 public class PNBlocks {
     /** All blocks. */
-    public static Block coreArmored;
+    public static Block oreIron, coreArmored;
 
     /** Load all blocks. */
     public static void load() {
+        oreIron = new OreBlock(PNItems.iron) {{
+            oreDefault = true;
+            oreThreshold = 0.81f;
+            oreScale = 23.47619f;
+        }};
+
         coreArmored = new CoreBlock("core-armored") {{
             alwaysUnlocked = true;
             health = 12000;

@@ -16,7 +16,8 @@ public class PNItems {
     /** Load all items. */
     public static void load() {
         iron = new Item("iron", Color.valueOf("c0c0c0")) {{
-            cost = 1.25f;
+            hardness = 1;
+            cost = 1f;
         }};
     }
 }

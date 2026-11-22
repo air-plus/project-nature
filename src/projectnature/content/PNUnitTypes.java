@@ -25,11 +25,11 @@ public class PNUnitTypes {
             aiController = () -> new BuilderAI(true, 400f);
             isEnemy = false;
 
-            health = 150f;
+            health = 600f;
             hitSize = 8f;
             speed = 2f;
-            armor = 4f;
-            rotateSpeed = 4f;
+            armor = 2f;
+            rotateSpeed = 6f;
             itemCapacity = 40;
 
             legCount = 4;
