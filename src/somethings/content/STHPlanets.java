@@ -51,7 +51,7 @@ public class STHPlanets {
             meshLoader = () -> new NoiseMesh(
                 this, 114514, 5, radius, 3, 0.5f, 1f, 1f,
                 Color.valueOf("697723"),
-                Pal.water;,
+                Pal.water,
                 1, 0.5f, 1f, 0.5f
             );
             cloudMeshLoader = () -> new MultiMesh(

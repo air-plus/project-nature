@@ -5,7 +5,7 @@
 
 ![STARS](https://img.shields.io/github/stars/air-plus/somethings?style=for-the-badge)
 ![ISSUES](https://img.shields.io/github/issues/air-plus/somethings?style=for-the-badge)
-![CONTRIBUTORS](https://img.shields.io/github/contributors/air-plus/something?style=for-the-badge)
+![CONTRIBUTORS](https://img.shields.io/github/contributors/air-plus/somethings?style=for-the-badge)
 </div>
 
 ---
