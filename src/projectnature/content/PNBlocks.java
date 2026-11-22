@@ -96,7 +96,7 @@ public class PNBlocks {
                         x = -3f;
                         moveY = -2f;
                         heatColor = Pal.turretHeat;
-                        mirror = true
+                        mirror = true;
                     }}
                 );
             }};
