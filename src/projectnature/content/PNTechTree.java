@@ -18,26 +18,26 @@ public class PNTechTree {
     /** Load all tech tree. */
     public static void load() {
         PNPlanets.terra.techTree = nodeRoot("terra", PNBlocks.coreArmored, () -> {
-            node(PNBlocks.iterativeMechanicalDrill, () -> {});
+            node(PNBlocks.enhanceMechanicalDrill, () -> {});
 
             node(PNBlocks.bacterium, () -> {});
 
-            node(PNBlocks.copperDuct, () -> {
-                node(PNBlocks.copperDuctRouter, () -> {
-                    node(PNBlocks.copperOverflowDuct, () -> {});
-                    node(PNBlocks.copperUnderflowDuct, () -> {});
+            node(PNBlocks.logisticsDuct, () -> {
+                node(PNBlocks.logisticsDuctRouter, () -> {
+                    node(PNBlocks.logisticsOverflowDuct, () -> {});
+                    node(PNBlocks.logisticsUnderflowDuct, () -> {});
                 });
 
-                node(PNBlocks.copperDuctBridge, () -> {});
+                node(PNBlocks.logisticsDuctBridge, () -> {});
             });
 
-            node(PNBlocks.iterativeCombustionGenerator, () -> {
-                node(PNBlocks.iterativeSolarPanel, () -> {
-                    node(PNBlocks.largeIterativeSolarPanel, () -> {});
+            node(PNBlocks.enhanceCombustionGenerator, () -> {
+                node(PNBlocks.enhanceSolarPanel, () -> {
+                    node(PNBlocks.largeEnhanceSolarPanel, () -> {});
                 });
 
-                node(PNBlocks.iterativePowerNode, () -> {
-                    node(PNBlocks.iterativePowerNodeLarge, () -> {});
+                node(PNBlocks.enhancePowerNode, () -> {
+                    node(PNBlocks.enhancePowerNodeLarge, () -> {});
                 });
             });
 
@@ -52,8 +52,6 @@ public class PNTechTree {
             nodeProduce(Items.copper, () -> {
                 nodeProduce(PNItems.iron, () -> {
                     nodeProduce(Items.coal, () -> {});
-                    nodeProduce(Items.sand, () -> {});
-                    nodeProduce(Liquids.water, () -> {});
                 });
             });
         });

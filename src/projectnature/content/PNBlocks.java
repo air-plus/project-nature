@@ -40,13 +40,13 @@ public class PNBlocks {
 
     bacterium,
 
-    iterativeMechanicalDrill,
+    enhanceMechanicalDrill,
 
-    copperDuctRouter, copperOverflowDuct, copperUnderflowDuct,
-    copperDuctBridge, copperDuct,
+    logisticsDuctRouter, logisticsOverflowDuct, logisticsUnderflowDuct,
+    logisticsDuctBridge, logisticsDuct,
 
-    iterativeCombustionGenerator, iterativePowerNode, iterativePowerNodeLarge,
-    iterativeSolarPanel, largeIterativeSolarPanel,
+    enhanceCombustionGenerator, enhancePowerNode, enhancePowerNodeLarge,
+    enhanceSolarPanel, largeEnhanceSolarPanel,
 
     ironWall, ironWallLarge,
 
@@ -60,7 +60,7 @@ public class PNBlocks {
             oreScale = 23.47619f;
         }};
 
-        iterativeMechanicalDrill = new Drill("iterative-mechanical-drill") {{
+        enhanceMechanicalDrill = new Drill("enhance-mechanical-drill") {{
             health = 160;
             size = 2;
             requirements(Category.production, ItemStack.with(
@@ -90,13 +90,19 @@ public class PNBlocks {
             );
             drawer = new DrawTurret() {{
                 parts.add(
-                    new RegionPart("-barrel") {{
+                    new RegionPart("-barrel-l") {{
                         progress = PartProgress.recoil;
                         recoilIndex = 0;
                         x = -3f;
                         moveY = -2f;
                         heatColor = Pal.turretHeat;
-                        mirror = true;
+                    }},
+                    new RegionPart("-barrel-r") {{
+                        progress = PartProgress.recoil;
+                        recoilIndex = 1;
+                        x = 3f;
+                        moveY = -2f;
+                        heatColor = Pal.turretHeat;
                     }}
                 );
             }};
@@ -108,7 +114,7 @@ public class PNBlocks {
             coolant = consumeCoolant(0.1f);
         }};
 
-        copperDuctRouter = new DuctRouter("copper-duct-router") {{
+        logisticsDuctRouter = new DuctRouter("logistics-duct-router") {{
             health = 40;
             size = 1;
             requirements(Category.distribution, ItemStack.with(
@@ -118,7 +124,7 @@ public class PNBlocks {
             speed = 4f;
         }};
 
-        copperOverflowDuct = new OverflowDuct("copper-overflow-duct") {{
+        logisticsOverflowDuct = new OverflowDuct("logistics-overflow-duct") {{
             health = 40;
             size = 1;
             requirements(Category.distribution, ItemStack.with(
@@ -128,7 +134,7 @@ public class PNBlocks {
             speed = 4f;
         }};
 
-        copperUnderflowDuct = new OverflowDuct("copper-underflow-duct") {{
+        logisticsUnderflowDuct = new OverflowDuct("logistics-underflow-duct") {{
             health = 40;
             size = 1;
             requirements(Category.distribution, ItemStack.with(
@@ -139,7 +145,7 @@ public class PNBlocks {
             invert = true;
         }};
 
-        copperDuctBridge = new DuctBridge("copper-duct-bridge") {{
+        logisticsDuctBridge = new DuctBridge("logistics-duct-bridge") {{
             health = 40;
             size = 1;
             requirements(Category.distribution, ItemStack.with(
@@ -151,7 +157,7 @@ public class PNBlocks {
             buildCostMultiplier = 2f;
         }};
 
-        copperDuct = new Duct("copper-duct") {{
+        logisticsDuct = new Duct("logistics-duct") {{
             health = 40;
             size = 1;
             requirements(Category.distribution, ItemStack.with(
@@ -159,10 +165,10 @@ public class PNBlocks {
             ));
 
             speed = 4f;
-            bridgeReplacement = copperDuctBridge;
+            bridgeReplacement = logisticsDuctBridge;
         }};
 
-        iterativeCombustionGenerator = new ConsumeGenerator("iterative-combustion-generator") {{
+        enhanceCombustionGenerator = new ConsumeGenerator("enhance-combustion-generator") {{
             health = 20;
             size = 1;
             requirements(Category.power, ItemStack.with(
@@ -176,7 +182,7 @@ public class PNBlocks {
             consume(new ConsumeLiquidFlammable());
         }};
 
-        iterativePowerNode = new PowerNode("iterative-power-node") {{
+        enhancePowerNode = new PowerNode("enhance-power-node") {{
             health = 10;
             size = 1;
             requirements(Category.power, ItemStack.with(
@@ -189,7 +195,7 @@ public class PNBlocks {
             consumePowerBuffered(400f);
         }};
 
-        iterativePowerNodeLarge = new PowerNode("iterative-power-node-large") {{
+        enhancePowerNodeLarge = new PowerNode("enhance-power-node-large") {{
             health = 20;
             size = 2;
             requirements(Category.power, ItemStack.with(
@@ -202,7 +208,7 @@ public class PNBlocks {
             consumePowerBuffered(4000f);
         }};
 
-        iterativeSolarPanel = new SolarGenerator("iterative-solar-panel") {{
+        enhanceSolarPanel = new SolarGenerator("enhance-solar-panel") {{
             health = 40;
             size = 1;
             requirements(Category.power, ItemStack.with(
@@ -213,7 +219,7 @@ public class PNBlocks {
             powerProduction = 0.12f;
         }};
 
-        largeIterativeSolarPanel = new SolarGenerator("iterative-solar-panel-large") {{
+        largeEnhanceSolarPanel = new SolarGenerator("enhance-solar-panel-large") {{
             health = 400;
             size = 3;
             requirements(Category.power, ItemStack.with(
