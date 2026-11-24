@@ -29,6 +29,8 @@ public class PNTechTree {
                 });
 
                 node(PNBlocks.logisticsDuctBridge, () -> {});
+
+                node(PNBlocks.logisticsUnloader, () -> {});
             });
 
             node(PNBlocks.enhanceCombustionGenerator, () -> {

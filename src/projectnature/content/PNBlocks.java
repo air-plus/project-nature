@@ -13,6 +13,8 @@ import mindustry.world.blocks.distribution.Duct;
 import mindustry.world.blocks.distribution.DuctRouter;
 import mindustry.world.blocks.distribution.OverflowDuct;
 import mindustry.world.blocks.distribution.DuctBridge;
+import mindustry.world.blocks.storage.Unloader;
+import mindustry.world.meta.BlockGroup;
 import mindustry.world.blocks.power.ConsumeGenerator;
 import mindustry.world.consumers.ConsumeItemFlammable;
 import mindustry.world.consumers.ConsumeLiquidFlammable;
@@ -42,7 +44,7 @@ public class PNBlocks {
     enhanceMechanicalDrill,
 
     logisticsDuctRouter, logisticsOverflowDuct, logisticsUnderflowDuct,
-    logisticsDuctBridge, logisticsDuct,
+    logisticsDuctBridge, logisticsDuct, logisticsUnloader,
 
     enhanceCombustionGenerator, enhancePowerNode, enhancePowerNodeLarge,
     enhanceSolarPanel, largeEnhanceSolarPanel,
@@ -162,6 +164,19 @@ public class PNBlocks {
 
             speed = 4f;
             bridgeReplacement = logisticsDuctBridge;
+        }};
+
+        // TODO: Change `PNItems.iron` to expensive material.
+        logisticsUnloader = new Unloader("logistics-unloader") {{
+            health = 40;
+            size = 1;
+            requirements(Category.distribution, ItemStack.with(
+                Items.copper, 25,
+                PNItems.iron, 30
+            ));
+
+            speed = 60f / 11f;
+            group = BlockGroup.transportation;
         }};
 
         enhanceCombustionGenerator = new ConsumeGenerator("enhance-combustion-generator") {{
