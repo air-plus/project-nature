@@ -6,7 +6,6 @@ import mindustry.world.blocks.production.Drill;
 import mindustry.world.blocks.defense.turrets.ItemTurret;
 import mindustry.entities.bullet.BasicBulletType;
 import mindustry.entities.part.RegionPart;
-import mindustry.graphics.Pal;
 import mindustry.world.draw.DrawTurret;
 import mindustry.entities.part.DrawPart.PartProgress;
 import mindustry.entities.pattern.ShootAlternate;
@@ -89,26 +88,23 @@ public class PNBlocks {
                 }}
             );
             drawer = new DrawTurret() {{
-                parts.add(
-                    new RegionPart("-barrel-l") {{
-                        progress = PartProgress.recoil;
-                        recoilIndex = 0;
-                        x = -3f;
-                        moveY = -2f;
-                        heatColor = Pal.turretHeat;
-                    }},
-                    new RegionPart("-barrel-r") {{
-                        progress = PartProgress.recoil;
-                        recoilIndex = 1;
-                        x = 3f;
-                        moveY = -2f;
-                        heatColor = Pal.turretHeat;
-                    }}
-                );
+                for (int i = 0; i < 2; i++) {
+                    int f = i;
+                    parts.add(
+                        new RegionPart("-barrel-" + (i == 0 ? "l" : "r")) {{
+                            progress = PartProgress.recoil;
+                            recoilIndex = f;
+                            under = true;
+                            moveY = -2f;
+                        }}
+                    );
+                }
             }};
-            range = 150f;
+            range = 160;
             shoot = new ShootAlternate(3f);
+            rotateSpeed = 10f;
             recoils = 2;
+            recoil = 0.2f;
             shootY = 6f;
             consumePower(1f);
             coolant = consumeCoolant(0.1f);

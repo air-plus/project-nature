@@ -26,7 +26,7 @@ public class PNTeam {
     /**
      * Load all teams.
      *
-     * @throws RuntimeException If failed to register team
+     * @throws RuntimeException - If failed to register team
      * @see setStaticFinalField(Field, Object)
      */
     public static void load() {
@@ -69,8 +69,8 @@ public class PNTeam {
      *
      * <p>Uses `sun.misc.Unsafe` (via reflection) on desktop, and plain reflection on mobile.
      *
-     * @param field The Field
-     * @param value The Object
+     * @param field - The Field
+     * @param value - The Object
      */
     private static void setStaticFinalField(Field field, Object value) throws Exception {
         if (!Vars.mobile) {

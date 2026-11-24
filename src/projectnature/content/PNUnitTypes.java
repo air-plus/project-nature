@@ -35,11 +35,7 @@ public class PNUnitTypes {
             legCount = 4;
             legGroupSize = 2;
             legLength = 12f;
-            legBaseOffset = 4f;
             legMoveSpace = 0.8f;
-            legForwardScl = 0.5f;
-            legExtension = -2f;
-            legPairOffset = 2f;
 
             mineTier = 2;
             mineSpeed = 6f;
