@@ -3,9 +3,9 @@
 
 添加了乱七八糟的小玩意。。。
 
-![STARS](https://img.shields.io/github/stars/air-plus/somethings?style=for-the-badge)
-![ISSUES](https://img.shields.io/github/issues/air-plus/somethings?style=for-the-badge)
-![CONTRIBUTORS](https://img.shields.io/github/contributors/air-plus/somethings?style=for-the-badge)
+![STARS](https://img.shields.io/github/stars/air-plus/project-nature?style=for-the-badge)
+![ISSUES](https://img.shields.io/github/issues/air-plus/project-nature?style=for-the-badge)
+![CONTRIBUTORS](https://img.shields.io/github/contributors/air-plus/project-nature?style=for-the-badge)
 </div>
 
 ---
