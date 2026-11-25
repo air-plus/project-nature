@@ -37,6 +37,7 @@ public class PNPlanets {
             );
         }};
 
+        // TODO: Add Erekir-like fog.
         terra = new Planet("terra", sol, 1f, 3) {{
             alwaysUnlocked = true;
             iconColor = Color.valueOf("697723");
@@ -47,7 +48,6 @@ public class PNPlanets {
             defaultCore = PNBlocks.coreArmored;
             landCloudColor = Color.valueOf("e0e0e0").a(0.5f);
             orbitRadius = 100f;
-            hasAtmosphere = true;
             atmosphereColor = Color.valueOf("7f7f7f");
 
             meshLoader = () -> new NoiseMesh(
@@ -74,9 +74,11 @@ public class PNPlanets {
                 r.placeRangeCheck = true;
                 r.derelictRepair = true;
                 r.coreDestroyClear = true;
-                r.weather.add(new Weather.WeatherEntry(Weathers.rain) {{
-                    always = true;
-                }});
+                r.weather.add(
+                    new Weather.WeatherEntry(Weathers.rain) {{
+                        always = true;
+                    }}
+                );
             };
         }};
 
