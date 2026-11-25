@@ -47,6 +47,8 @@ public class PNPlanets {
             defaultCore = PNBlocks.coreArmored;
             landCloudColor = Color.valueOf("e0e0e0").a(0.5f);
             orbitRadius = 100f;
+            hasAtmosphere = true;
+            atmosphereColor = Color.valueOf("7f7f7f");
 
             meshLoader = () -> new NoiseMesh(
                 this, 114514, 5, radius, 3, 0.5f, 1f, 1f,
