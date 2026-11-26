@@ -1,6 +1,7 @@
 package projectnature.content;
 
 import mindustry.type.UnitType;
+import mindustry.content.UnitTypes;
 import mindustry.gen.LegsUnit;
 import mindustry.ai.types.BuilderAI;
 import mindustry.type.weapons.RepairBeamWeapon;
@@ -19,6 +20,9 @@ public class PNUnitTypes {
 
     /** Load all unit types. */
     public static void load() {
+        UnitTypes.renale.databaseTag = "swarm";
+        UnitTypes.latum.databaseTag = "swarm";
+
         delta = new UnitType("delta") {{
             constructor = LegsUnit::create;
             coreUnitDock = true;

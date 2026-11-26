@@ -24,7 +24,6 @@ import mindustry.world.blocks.defense.Wall;
 import mindustry.world.blocks.storage.CoreBlock;
 import mindustry.type.ItemStack;
 import mindustry.type.Category;
-import mindustry.content.Items;
 import mindustry.content.Liquids;
 
 /**
@@ -37,7 +36,7 @@ public class PNBlocks {
     /** All blocks. */
     public static Block
 
-    oreIron,
+    oreSilver, oreIron,
 
     bacterium,
 
@@ -47,25 +46,32 @@ public class PNBlocks {
     logisticsDuctBridge, logisticsDuct, logisticsUnloader,
 
     enhanceCombustionGenerator, enhancePowerNode, enhancePowerNodeLarge,
-    enhanceSolarPanel, largeEnhanceSolarPanel,
+    enhanceSolarPanel, enhanceSolarPanelLarge,
 
-    ironWall, ironWallLarge,
+    silverWall, silverWallLarge, ironWall,
+    ironWallLarge,
 
     coreArmored;
 
     /** Load all blocks. */
     public static void load() {
-        oreIron = new OreBlock(PNItems.iron) {{
+        oreSilver = new OreBlock(PNItems.silver) {{
             oreDefault = true;
             oreThreshold = 0.81f;
             oreScale = 23.47619f;
+        }};
+
+        oreIron = new OreBlock(PNItems.iron) {{
+            oreDefault = true;
+            oreThreshold = 0.828f;
+            oreScale = 23.952381f;
         }};
 
         enhanceMechanicalDrill = new Drill("enhance-mechanical-drill") {{
             health = 160;
             size = 2;
             requirements(Category.production, ItemStack.with(
-                Items.copper, 12
+                PNItems.silver, 12
             ));
 
             tier = 2;
@@ -75,14 +81,14 @@ public class PNBlocks {
         }};
 
         bacterium = new ItemTurret("bacterium") {{
+            health = 1600;
             size = 2;
-            health = 400 * size * size;
             requirements(Category.turret, ItemStack.with(
-                Items.copper, 30
+                PNItems.silver, 30
             ));
 
             ammo(
-                Items.copper, new BasicBulletType(2.5f, 11) {{
+                PNItems.silver, new BasicBulletType(2.5f, 11) {{
                     width = 7f;
                     height = 9f;
                     lifetime = 60f;
@@ -116,7 +122,7 @@ public class PNBlocks {
             health = 40;
             size = 1;
             requirements(Category.distribution, ItemStack.with(
-                Items.copper, 4
+                PNItems.silver, 4
             ));
 
             speed = 4f;
@@ -126,7 +132,7 @@ public class PNBlocks {
             health = 40;
             size = 1;
             requirements(Category.distribution, ItemStack.with(
-                Items.copper, 4
+                PNItems.silver, 4
             ));
 
             speed = 4f;
@@ -136,7 +142,7 @@ public class PNBlocks {
             health = 40;
             size = 1;
             requirements(Category.distribution, ItemStack.with(
-                Items.copper, 4
+                PNItems.silver, 4
             ));
 
             speed = 4f;
@@ -147,7 +153,7 @@ public class PNBlocks {
             health = 40;
             size = 1;
             requirements(Category.distribution, ItemStack.with(
-                Items.copper, 6
+                PNItems.silver, 6
             ));
 
             speed = 4f;
@@ -159,7 +165,7 @@ public class PNBlocks {
             health = 40;
             size = 1;
             requirements(Category.distribution, ItemStack.with(
-                Items.copper, 1
+                PNItems.silver, 1
             ));
 
             speed = 4f;
@@ -171,7 +177,7 @@ public class PNBlocks {
             health = 40;
             size = 1;
             requirements(Category.distribution, ItemStack.with(
-                Items.copper, 25,
+                PNItems.silver, 25,
                 PNItems.iron, 30
             ));
 
@@ -183,7 +189,7 @@ public class PNBlocks {
             health = 20;
             size = 1;
             requirements(Category.power, ItemStack.with(
-                Items.copper, 20,
+                PNItems.silver, 20,
                 PNItems.iron, 10
             ));
 
@@ -197,7 +203,7 @@ public class PNBlocks {
             health = 10;
             size = 1;
             requirements(Category.power, ItemStack.with(
-                Items.copper, 2,
+                PNItems.silver, 2,
                 PNItems.iron, 3
             ));
 
@@ -210,7 +216,7 @@ public class PNBlocks {
             health = 20;
             size = 2;
             requirements(Category.power, ItemStack.with(
-                Items.copper, 8,
+                PNItems.silver, 8,
                 PNItems.iron, 12
             ));
 
@@ -223,26 +229,42 @@ public class PNBlocks {
             health = 40;
             size = 1;
             requirements(Category.power, ItemStack.with(
-                Items.copper, 10,
+                PNItems.silver, 10,
                 PNItems.iron, 5
             ));
 
             powerProduction = 0.12f;
         }};
 
-        largeEnhanceSolarPanel = new SolarGenerator("enhance-solar-panel-large") {{
+        enhanceSolarPanelLarge = new SolarGenerator("enhance-solar-panel-large") {{
             health = 400;
             size = 3;
             requirements(Category.power, ItemStack.with(
-                Items.copper, 80,
+                PNItems.silver, 80,
                 PNItems.iron, 60
             ));
 
             powerProduction = 1.6f;
         }};
 
+        silverWall = new Wall("silver-wall") {{
+            health = 320;
+            size = 1;
+            requirements(Category.defense, ItemStack.with(
+                PNItems.silver, 6
+            ));
+        }};
+
+        silverWallLarge = new Wall("silver-wall-large") {{
+            health = 1280;
+            size = 2;
+            requirements(Category.defense, ItemStack.with(
+                PNItems.silver, 24
+            ));
+        }};
+
         ironWall = new Wall("iron-wall") {{
-            health = 80 * 4;
+            health = 320;
             size = 1;
             requirements(Category.defense, ItemStack.with(
                 PNItems.iron, 6
@@ -250,7 +272,7 @@ public class PNBlocks {
         }};
 
         ironWallLarge = new Wall("iron-wall-large") {{
-            health = 80 * 4 * 4;
+            health = 1280;
             size = 2;
             requirements(Category.defense, ItemStack.with(
                 PNItems.iron, 24
@@ -263,7 +285,7 @@ public class PNBlocks {
             size = 4;
             itemCapacity = 8000;
             requirements(Category.effect, ItemStack.with(
-                Items.copper, 2000,
+                PNItems.silver, 2000,
                 PNItems.iron, 1000
             ));
 

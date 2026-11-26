@@ -1,9 +1,5 @@
 package projectnature.content;
 
-import mindustry.content.Items;
-import mindustry.content.Blocks;
-import mindustry.content.Liquids;
-
 import static mindustry.content.TechTree.nodeRoot;
 import static mindustry.content.TechTree.node;
 import static mindustry.content.TechTree.nodeProduce;
@@ -43,18 +39,16 @@ public class PNTechTree {
                 });
             });
 
-            node(Blocks.copperWall, () -> {
+            node(PNBlocks.silverWall, () -> {
                 node(PNBlocks.ironWall, () -> {
                     node(PNBlocks.ironWallLarge, () -> {});
                 });
 
-                node(Blocks.copperWallLarge);
+                node(PNBlocks.silverWallLarge);
             });
 
-            nodeProduce(Items.copper, () -> {
-                nodeProduce(PNItems.iron, () -> {
-                    nodeProduce(Items.coal, () -> {});
-                });
+            nodeProduce(PNItems.silver, () -> {
+                nodeProduce(PNItems.iron, () -> {});
             });
         });
 
