@@ -20,8 +20,8 @@ public class PNUnitTypes {
 
     /** Load all unit types. */
     public static void load() {
-        UnitTypes.renale.databaseTag = "swarm";
-        UnitTypes.latum.databaseTag = "swarm";
+        UnitTypes.renale.databaseTag = "swarm-t1";
+        UnitTypes.latum.databaseTag = "swarm-t1";
 
         delta = new UnitType("delta") {{
             constructor = LegsUnit::create;
