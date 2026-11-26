@@ -31,7 +31,7 @@ public class PNTechTree {
 
             node(PNBlocks.enhanceCombustionGenerator, () -> {
                 node(PNBlocks.enhanceSolarPanel, () -> {
-                    node(PNBlocks.largeEnhanceSolarPanel, () -> {});
+                    node(PNBlocks.enhanceSolarPanelLarge, () -> {});
                 });
 
                 node(PNBlocks.enhancePowerNode, () -> {
