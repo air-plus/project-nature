@@ -4,7 +4,6 @@ import mindustry.type.Planet;
 import mindustry.type.Weather;
 import mindustry.content.Weathers;
 import mindustry.maps.generators.BlankPlanetGenerator;
-import mindustry.maps.planet.AsteroidGenerator;
 import mindustry.graphics.g3d.SunMesh;
 import mindustry.graphics.g3d.NoiseMesh;
 import mindustry.graphics.g3d.MultiMesh;
@@ -86,7 +85,7 @@ public class PNPlanets {
             alwaysUnlocked = true;
             iconColor = Color.valueOf("8c8c8c");
 
-            generator = new AsteroidGenerator();
+            generator = new BlankPlanetGenerator();
             defaultEnv = Env.space;
             defaultCore = PNBlocks.coreArmored;
             hasAtmosphere = false;
