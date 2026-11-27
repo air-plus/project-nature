@@ -29,7 +29,7 @@ public class PNUnitTypes {
         delta = new UnitType("delta") {{
             constructor = LegsUnit::create;
             coreUnitDock = true;
-            controller = u -> u.isAI() ? new BuilderAI(true, 400f) : new CommandAI();
+            controller = u -> new BuilderAI(true, 400f);
             isEnemy = false;
 
             health = 600f;
@@ -38,6 +38,7 @@ public class PNUnitTypes {
             armor = 2f;
             rotateSpeed = 6f;
             itemCapacity = 40;
+            fogRadius = 0f;
 
             legCount = 4;
             legGroupSize = 2;
