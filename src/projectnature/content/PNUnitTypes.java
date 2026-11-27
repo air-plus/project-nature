@@ -4,6 +4,7 @@ import mindustry.type.UnitType;
 import mindustry.content.UnitTypes;
 import mindustry.gen.LegsUnit;
 import mindustry.ai.types.BuilderAI;
+import mindustry.ai.types.CommandAI;
 import mindustry.type.weapons.RepairBeamWeapon;
 import mindustry.graphics.Pal;
 import mindustry.entities.bullet.BulletType;
@@ -16,7 +17,9 @@ import mindustry.entities.bullet.BulletType;
  */
 public class PNUnitTypes {
     /** All unit types. */
-    public static UnitType delta;
+    public static UnitType
+
+    delta;
 
     /** Load all unit types. */
     public static void load() {
@@ -26,7 +29,7 @@ public class PNUnitTypes {
         delta = new UnitType("delta") {{
             constructor = LegsUnit::create;
             coreUnitDock = true;
-            aiController = () -> new BuilderAI(true, 400f);
+            controller = u -> u.isAI() ? new BuilderAI(true, 400f) : new CommandAI();
             isEnemy = false;
 
             health = 600f;

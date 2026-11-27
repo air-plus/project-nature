@@ -12,6 +12,7 @@ import arc.graphics.Color;
 public class PNItems {
     /** All items. */
     public static Item
+
     silver, iron;
 
     /** Load all items. */
