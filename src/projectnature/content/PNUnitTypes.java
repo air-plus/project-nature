@@ -29,7 +29,7 @@ public class PNUnitTypes {
         delta = new UnitType("delta") {{
             constructor = LegsUnit::create;
             coreUnitDock = true;
-            controller = u -> new BuilderAI(true, 400f);
+            controller = u -> u.team.isAI() ? new BuilderAI(true, 400f) : new CommandAI();
             isEnemy = false;
 
             health = 600f;
