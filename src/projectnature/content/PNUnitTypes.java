@@ -1,7 +1,6 @@
 package projectnature.content;
 
 import mindustry.type.UnitType;
-import mindustry.content.UnitTypes;
 import mindustry.gen.LegsUnit;
 import mindustry.ai.types.BuilderAI;
 import mindustry.ai.types.CommandAI;
@@ -23,9 +22,6 @@ public class PNUnitTypes {
 
     /** Load all unit types. */
     public static void load() {
-        UnitTypes.renale.databaseTag = "swarm-t1";
-        UnitTypes.latum.databaseTag = "swarm-t1";
-
         delta = new UnitType("delta") {{
             constructor = LegsUnit::create;
             coreUnitDock = true;
@@ -65,7 +61,7 @@ public class PNUnitTypes {
                 healColor = Pal.accent;
 
                 bullet = new BulletType() {{
-                    maxRange = 80f;
+                    maxRange = 60f;
                 }};
             }});
         }};
