@@ -39,7 +39,7 @@ public class PNPlanets {
         // TODO: Add Erekir-like fog.
         terra = new Planet("terra", sol, 1f, 3) {{
             alwaysUnlocked = true;
-            iconColor = Color.valueOf("697723");
+            iconColor = Color.valueOf("545f5b");
 
             generator = new BlankPlanetGenerator();
             defaultEnv = Env.terrestrial | Env.groundOil | Env.groundWater | Env.oxygen;
@@ -51,7 +51,7 @@ public class PNPlanets {
 
             meshLoader = () -> new NoiseMesh(
                 this, 114514, 5, radius, 3, 0.5f, 1f, 1f,
-                Color.valueOf("697723"),
+                Color.valueOf("545f5b"),
                 Pal.water,
                 1, 0.5f, 1f, 0.5f
             );
