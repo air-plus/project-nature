@@ -49,11 +49,19 @@ public class PNPlanets {
             orbitRadius = 100f;
             atmosphereColor = Pal.water;
 
-            meshLoader = () -> new NoiseMesh(
-                this, 114514, 5, radius, 3, 0.5f, 1f, 1f,
-                Color.valueOf("545f5b"),
-                Pal.water,
-                1, 0.5f, 1f, 0.5f
+            meshLoader = () -> new MultiMesh(
+                new NoiseMesh(
+                    this, 114514, 5, radius, 3, 0.5f, 1f, 1f,
+                    Color.valueOf("545f5b"),
+                    Pal.water,
+                    1, 0.5f, 1f, 0.5f
+                ),
+                new NoiseMesh(
+                    this, 1919810, 5, radius, 3, 0.5f, 1f, 1f,
+                    Color.valueOf("545f5b"),
+                    Pal.water,
+                    1, 0.5f, 1f, 0.5f
+                )
             );
             cloudMeshLoader = () -> new MultiMesh(
                 new HexSkyMesh(
