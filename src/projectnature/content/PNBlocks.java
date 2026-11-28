@@ -97,13 +97,14 @@ public class PNBlocks {
             );
             drawer = new DrawTurret() {{
                 for (int i = 0; i < 2; i++) {
+                    int f = i;
                     parts.add(
                         new RegionPart("-barrel-" + (i == 0 ? "l" : "r")) {{
                             progress = PartProgress.recoil;
-                            recoilIndex = i;
+                            recoilIndex = f;
                             under = true;
                             moveY = -2f;
-                            x = (i == 0 ? -2 : 2);
+                            x = (f == 0 ? -2 : 2);
                         }}
                     );
                 }
@@ -283,6 +284,7 @@ public class PNBlocks {
             alwaysUnlocked = true;
             health = 12000;
             size = 4;
+            armor = 8f;
             itemCapacity = 8000;
             requirements(Category.effect, ItemStack.with(
                 PNItems.silver, 2000,
@@ -290,6 +292,7 @@ public class PNBlocks {
             ));
 
             unitCapModifier = 16;
+            incinerateNonBuildable = true;
             unitType = PNUnitTypes.delta;
         }};
     }
