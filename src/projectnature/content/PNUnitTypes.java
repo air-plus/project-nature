@@ -35,6 +35,7 @@ public class PNUnitTypes {
             rotateSpeed = 6f;
             itemCapacity = 40;
             fogRadius = 0f;
+            range = 60f;
 
             legCount = 4;
             legGroupSize = 2;
