@@ -97,13 +97,13 @@ public class PNBlocks {
             );
             drawer = new DrawTurret() {{
                 for (int i = 0; i < 2; i++) {
-                    int f = i;
                     parts.add(
                         new RegionPart("-barrel-" + (i == 0 ? "l" : "r")) {{
                             progress = PartProgress.recoil;
-                            recoilIndex = f;
+                            recoilIndex = i;
                             under = true;
                             moveY = -2f;
+                            x = (i == 0 ? -2 : 2);
                         }}
                     );
                 }
